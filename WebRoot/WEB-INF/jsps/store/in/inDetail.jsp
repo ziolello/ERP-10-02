@@ -1,3 +1,5 @@
+
+<%--inDetail.jsp --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <s:jscall name="inDetail.js" url="inDetail.jsp"/>
@@ -49,6 +51,7 @@
 							</s:if>
 						</s:iterator>
 				</table>
+<%--inDetail.jsp --%>
 				
 				<center id="allInTitle" style="display:none;font-size:16px; font-weight:bold; font-family:"黑体";">&nbsp;&nbsp;&nbsp;&nbsp;全&nbsp;&nbsp;部&nbsp;&nbsp;入&nbsp;&nbsp;库&nbsp;&nbsp;&nbsp;&nbsp;</center>
 				<table id="return" style="display:none" >
@@ -66,3 +69,4 @@
 	</div>
 	<div class="content-bbg"></div>
 </div>
+<%--inDetail.jsp --%>
