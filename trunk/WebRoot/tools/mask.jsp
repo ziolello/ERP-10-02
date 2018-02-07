@@ -1,3 +1,4 @@
+<%--mask.jsp --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
@@ -72,6 +73,9 @@
 	margin-right:18px;
 }
 </style>
+
+<%--mask.jsp --%>
+
 <script>
 		// 获取对象
 		var $ = function(id) {
@@ -213,3 +217,4 @@
 	<div class="content-bbg content-msg-size content-msg-bottom"></div>
 </div>
 
+<%--mask.jsp --%>
