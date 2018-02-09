@@ -53,7 +53,7 @@ function calendarBindDate(date)
 	}else{
 		_monthDays[1]=28;
 	}
-	var _previDate, _nextDate, _curDate, _day, i=0, temp=new Date(_year,_month,1).getDay() && _day <= _monthDays[_month];
+	var _previDate, _nextDate, _curDate, i=0, temp=new Date(_year,_month,1).getDay() && _day <= _monthDays[_month];
 	
 	
 	forCalBindDate(_startDay, _monthDays);
