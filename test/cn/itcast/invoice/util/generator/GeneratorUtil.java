@@ -11,8 +11,8 @@ import cn.itcast.invoice.invoice.storedetail.vo.StoreDetailModel;
 public class GeneratorUtil {
 	
 	public static void main(String[] args) throws Exception {
-		//ä¾�èµ–Modelç”Ÿæˆ�è‹¥å¹²ä¸ªæ–‡ä»¶
-		//æ‰§è¡ŒæŸ�ä¸ªæ–¹æ³•ï¼Œå°±ç”Ÿæˆ�å¯¹åº”çš„æ‰€æœ‰ä»£ç �ï¼Œæ–¹æ³•è¦�æ�ºå¸¦Class
+		//Ã¤Â¾ï¿½Ã¨Âµâ€“ModelÃ§â€�Å¸Ã¦Ë†ï¿½Ã¨â€¹Â¥Ã¥Â¹Â²Ã¤Â¸ÂªÃ¦â€“â€¡Ã¤Â»Â¶
+		//Ã¦â€°Â§Ã¨Â¡Å’Ã¦Å¸ï¿½Ã¤Â¸ÂªÃ¦â€“Â¹Ã¦Â³â€¢Ã¯Â¼Å’Ã¥Â°Â±Ã§â€�Å¸Ã¦Ë†ï¿½Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žÃ¦â€°â‚¬Ã¦Å“â€°Ã¤Â»Â£Ã§Â ï¿½Ã¯Â¼Å’Ã¦â€“Â¹Ã¦Â³â€¢Ã¨Â¦ï¿½Ã¦ï¿½ÂºÃ¥Â¸Â¦Class
 		//EmpModel,RoleModel,ResModel,MenuModel
 		//SupplierModel,GoodsTypeModel,GoodsModel
 		//OrderModel,OrderDetailModel
@@ -36,32 +36,32 @@ public class GeneratorUtil {
 	*/
 	public GeneratorUtil(Class clazz)throws Exception{
 		this.clazz = clazz;
-		//-1.æ•°æ�®åˆ�å§‹åŒ–
+		//-1.Ã¦â€¢Â°Ã¦ï¿½Â®Ã¥Ë†ï¿½Ã¥Â§â€¹Ã¥Å’â€“
 		dataInit();
-		//0.ç”Ÿæˆ�ä¿�å­˜æ–‡ä»¶çš„ç›®å½•
+		//0.Ã§â€�Å¸Ã¦Ë†ï¿½Ã¤Â¿ï¿½Ã¥Â­ËœÃ¦â€“â€¡Ã¤Â»Â¶Ã§Å¡â€žÃ§â€ºÂ®Ã¥Â½â€¢
 		genderatorDirectories();
-		//1.ç”Ÿæˆ�QueryModel
+		//1.Ã§â€�Å¸Ã¦Ë†ï¿½QueryModel
 		generatorQueryModel();
-		//2.ç”Ÿæˆ�Model.hbm.xml
+		//2.Ã§â€�Å¸Ã¦Ë†ï¿½Model.hbm.xml
 		generatorHbmXml();
-		//3.ç”Ÿæˆ�Dao
+		//3.Ã§â€�Å¸Ã¦Ë†ï¿½Dao
 		generatorDao();
-		//4.ç”Ÿæˆ�DaoImpl
+		//4.Ã§â€�Å¸Ã¦Ë†ï¿½DaoImpl
 		generatorDaoImpl();
-		//5.ç”Ÿæˆ�Ebi
+		//5.Ã§â€�Å¸Ã¦Ë†ï¿½Ebi
 		generatorEbi();
-		//6.ç”Ÿæˆ�Ebo
+		//6.Ã§â€�Å¸Ã¦Ë†ï¿½Ebo
 		generatorEbo();
-		//7.ç”Ÿæˆ�Action
+		//7.Ã§â€�Å¸Ã¦Ë†ï¿½Action
 		generatorAction();
-		//8.ç”Ÿæˆ�applicationContext.xml
+		//8.Ã§â€�Å¸Ã¦Ë†ï¿½applicationContext.xml
 		generatorApplicationContextXml();
-		//9.ç”Ÿæˆ�struts.xml
+		//9.Ã§â€�Å¸Ã¦Ë†ï¿½struts.xml
 	}
 	
-	//8.ç”Ÿæˆ�applicationContext.xml
+	//8.Ã§â€�Å¸Ã¦Ë†ï¿½applicationContext.xml
 	private void generatorApplicationContextXml() throws Exception{
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -149,9 +149,9 @@ public class GeneratorUtil {
 		
 		
 	}
-	//7.ç”Ÿæˆ�Action
+	//7.Ã§â€�Å¸Ã¦Ë†ï¿½Action
 	private void generatorAction() throws Exception{
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -212,7 +212,7 @@ public class GeneratorUtil {
 		
 		bw.newLine();
 		
-		bw.write("	//è·³è½¬åˆ°åˆ—è¡¨é¡µé�¢");
+		bw.write("	//Ã¨Â·Â³Ã¨Â½Â¬Ã¥Ë†Â°Ã¥Ë†â€”Ã¨Â¡Â¨Ã©Â¡ÂµÃ©ï¿½Â¢");
 		bw.newLine();
 		
 		bw.write("	public String list(){");
@@ -235,7 +235,7 @@ public class GeneratorUtil {
 		
 		bw.newLine();
 		
-		bw.write("	//ä¿�å­˜/ä¿®æ”¹");
+		bw.write("	//Ã¤Â¿ï¿½Ã¥Â­Ëœ/Ã¤Â¿Â®Ã¦â€�Â¹");
 		bw.newLine();
 		
 		bw.write("	public String save(){");
@@ -264,7 +264,7 @@ public class GeneratorUtil {
 		
 		bw.newLine();
 		
-		bw.write("	//è·³è½¬åˆ°æ·»åŠ /ä¿®æ”¹é¡µé�¢");
+		bw.write("	//Ã¨Â·Â³Ã¨Â½Â¬Ã¥Ë†Â°Ã¦Â·Â»Ã¥Å Â /Ã¤Â¿Â®Ã¦â€�Â¹Ã©Â¡ÂµÃ©ï¿½Â¢");
 		bw.newLine();
 		
 		bw.write("	public String input(){");
@@ -287,7 +287,7 @@ public class GeneratorUtil {
 		
 		bw.newLine();
 		
-		bw.write("	//åˆ é™¤");
+		bw.write("	//Ã¥Ë†Â Ã©â„¢Â¤");
 		bw.newLine();
 		
 		bw.write("	public String delete(){");
@@ -322,7 +322,7 @@ public class GeneratorUtil {
 	           }
 	         }
 	}
-	//6.ç”Ÿæˆ�Ebo
+	//6.Ã§â€�Å¸Ã¦Ë†ï¿½Ebo
 	private void generatorEbo() throws Exception{
 		File f = null;
 		BufferedWriter bw= null;
@@ -478,9 +478,9 @@ public class GeneratorUtil {
 	         }
 
 	}
-	//5.ç”Ÿæˆ�Ebi
+	//5.Ã§â€�Å¸Ã¦Ë†ï¿½Ebi
 	private void generatorEbi() throws Exception{
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -535,9 +535,9 @@ public class GeneratorUtil {
 	         }
 		
 	}
-	//4.ç”Ÿæˆ�DaoImpl
+	//4.Ã§â€�Å¸Ã¦Ë†ï¿½DaoImpl
 	private void generatorDaoImpl() throws Exception{
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -588,7 +588,7 @@ public class GeneratorUtil {
 		bw.write("		"+big+"QueryModel "+little+"qm = ("+big+"QueryModel) qm;");
 		bw.newLine();
 		
-		bw.write("		//TODO æ·»åŠ è‡ªå®šä¹‰æŸ¥è¯¢è§„åˆ™");
+		bw.write("		//TODO Ã¦Â·Â»Ã¥Å Â Ã¨â€¡ÂªÃ¥Â®Å¡Ã¤Â¹â€°Ã¦Å¸Â¥Ã¨Â¯Â¢Ã¨Â§â€žÃ¥Ë†â„¢");
 		bw.newLine();
 		
 		bw.write("	}");
@@ -613,9 +613,9 @@ public class GeneratorUtil {
 	         }
 		
 	}
-	//3.ç”Ÿæˆ�Dao
+	//3.Ã§â€�Å¸Ã¦Ë†ï¿½Dao
 	private void generatorDao() throws Exception{
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -663,7 +663,7 @@ public class GeneratorUtil {
 		
 		
 	}
-	//2.ç”Ÿæˆ�Model.hbm.xml
+	//2.Ã§â€�Å¸Ã¦Ë†ï¿½Model.hbm.xml
 	private void generatorHbmXml() throws Exception{
 		File f = null;
 		BufferedWriter bw= null;
@@ -704,23 +704,14 @@ public class GeneratorUtil {
 		
 		bw.write("        </id>");
 		bw.newLine();
-		//å¾ªçŽ¯ç”Ÿæˆ�
-		//éœ€è¦�èŽ·å�–æ‰€æœ‰çš„å­—æ®µå��
+		//Ã¥Â¾ÂªÃ§Å½Â¯Ã§â€�Å¸Ã¦Ë†ï¿½
+		//Ã©Å“â‚¬Ã¨Â¦ï¿½Ã¨Å½Â·Ã¥ï¿½â€“Ã¦â€°â‚¬Ã¦Å“â€°Ã§Å¡â€žÃ¥Â­â€”Ã¦Â®ÂµÃ¥ï¿½ï¿½
 		Field[] fields = clazz.getDeclaredFields();
 		for(Field fd:fields){
-			//å¦‚æžœæ˜¯ç§�æœ‰çš„ç”Ÿæˆ�
-			if(fd.getModifiers() == Modifier.PRIVATE){
-				if(!fd.getName().endsWith("View") && !fd.getName().equals("uuid")){
-					//æ»¡è¶³Long,Double,Integer,Stringçš„ç”Ÿæˆ�
-					if(fd.getType().equals(Long.class)
-							||fd.getType().equals(Double.class)
-							||fd.getType().equals(Integer.class)
-							||fd.getType().equals(String.class)
-							)
-					bw.write("        <property name=\""+fd.getName()+"\"/>");
-					bw.newLine();
-				}
-			}
+			//Ã¥Â¦â€šÃ¦Å¾Å“Ã¦ËœÂ¯Ã§Â§ï¿½Ã¦Å“â€°Ã§Å¡â€žÃ§â€�Å¸Ã¦Ë†ï¿½
+			if (check(fd)) {
+			bw.write("        <property name=\""+fd.getName()+"\"/>");
+			bw.newLine();}
 		}
 		
 		bw.write("    </class>");
@@ -750,9 +741,9 @@ public class GeneratorUtil {
 "+small+"
 "+pkg+"
 */
-	//1.ç”Ÿæˆ�QueryModel
+	//1.Ã§â€�Å¸Ã¦Ë†ï¿½QueryModel
 	private void generatorQueryModel() throws Exception {
-		//1.åˆ›å»ºæ–‡ä»¶
+		//1.Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€“â€¡Ã¤Â»Â¶
 		File f = null;
 		BufferedWriter bw= null;
 		try {
@@ -777,7 +768,7 @@ public class GeneratorUtil {
 		bw.write("public class "+big+"QueryModel extends "+big+"Model implements BaseQueryModel{");
 		bw.newLine();
 		
-		bw.write("	//TODO è¯·æ·»åŠ è‡ªå®šä¹‰æŸ¥è¯¢æ�¡ä»¶å­—æ®µ");
+		bw.write("	//TODO Ã¨Â¯Â·Ã¦Â·Â»Ã¥Å Â Ã¨â€¡ÂªÃ¥Â®Å¡Ã¤Â¹â€°Ã¦Å¸Â¥Ã¨Â¯Â¢Ã¦ï¿½Â¡Ã¤Â»Â¶Ã¥Â­â€”Ã¦Â®Âµ");
 		bw.newLine();
 		
 		bw.write("}");
@@ -800,9 +791,9 @@ public class GeneratorUtil {
 				
 	}
 
-	//0.ç”Ÿæˆ�ä¿�å­˜æ–‡ä»¶çš„ç›®å½•
+	//0.Ã§â€�Å¸Ã¦Ë†ï¿½Ã¤Â¿ï¿½Ã¥Â­ËœÃ¦â€“â€¡Ã¤Â»Â¶Ã§Å¡â€žÃ§â€ºÂ®Ã¥Â½â€¢
 	private void genderatorDirectories() {
-		//åˆ›å»ºæ‰€æœ‰æ–‡ä»¶çš„ä¿�å­˜ç›®å½•
+		//Ã¥Ë†â€ºÃ¥Â»ÂºÃ¦â€°â‚¬Ã¦Å“â€°Ã¦â€“â€¡Ã¤Â»Â¶Ã§Å¡â€žÃ¤Â¿ï¿½Ã¥Â­ËœÃ§â€ºÂ®Ã¥Â½â€¢
 		//web
 		File f = new File(rootDir+"/web");
 		f.mkdirs();
@@ -820,7 +811,7 @@ public class GeneratorUtil {
 		f.mkdirs();
 	}
 	
-	//-1.æ•°æ�®åˆ�å§‹åŒ–
+	//-1.Ã¦â€¢Â°Ã¦ï¿½Â®Ã¥Ë†ï¿½Ã¥Â§â€¹Ã¥Å’â€“
 	private void dataInit() {
 		//pkg;
 		String allPkg = clazz.getPackage().getName();
@@ -835,5 +826,22 @@ public class GeneratorUtil {
 		//small;
 		small = little+big.substring(1);
 	}
+	
+	private boolean check(Field fd) {
+		boolean checked = false;
+		if(fd.getModifiers() == Modifier.PRIVATE){
+			if(!fd.getName().endsWith("View") && !fd.getName().equals("uuid")){
+				//Ã¦Â»Â¡Ã¨Â¶Â³Long,Double,Integer,StringÃ§Å¡â€žÃ§â€�Å¸Ã¦Ë†ï¿½
+				if(fd.getType().equals(Long.class)
+						||fd.getType().equals(Double.class)
+						||fd.getType().equals(Integer.class)
+						||fd.getType().equals(String.class)
+						)  { checked= true;
+				}
+			}
+		}
+		return checked;
+	}
+	
 	
 }

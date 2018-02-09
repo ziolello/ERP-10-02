@@ -1,27 +1,36 @@
 package cn.itcast.invoice.util.format;
 
-import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.*;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class FormatUtil {
 	public static String formatDate(Long time){
 		if(time == null) return "-";
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		return  df.format(new Date(time));
+		LocalDate date = LocalDate.now();
+		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+		  String text = date.format(formatter);
+		  LocalDate parsedDate = LocalDate.parse(text, formatter);
+		return  parsedDate.toString();
 	}
 	public static String formatTime(Long time){
 		if(time == null) return "-";
-		DateFormat df = new SimpleDateFormat("HH:mm:ss");
-		return  df.format(new Date(time));
+		LocalDate date = LocalDate.now();
+		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH mm ss");
+		  String text = date.format(formatter);
+		  LocalDate parsedDate = LocalDate.parse(text, formatter);
+		return  parsedDate.toString();
 	}
 	public static String formatDateTime(Long time){
 		if(time == null) return "-";
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return  df.format(new Date(time));
+		LocalDate date = LocalDate.now();
+		  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss");
+		  String text = date.format(formatter);
+		  LocalDate parsedDate = LocalDate.parse(text, formatter);
+		return  parsedDate.toString();
 	}
-	//将一个小数显示两位小数
+	//å°†ä¸€ä¸ªå°�æ•°æ˜¾ç¤ºä¸¤ä½�å°�æ•°
 	public static String formatMoney(Double money){
 		DecimalFormat df = new DecimalFormat("#0.00");
 	    return df.format(money);
