@@ -61,7 +61,7 @@ public class OrderAction extends BaseAction{
 		this.orderEbi = orderEbi;
 	}
 
-	//è·³è½¬åˆ°åˆ—è¡¨é¡µé�¢
+	//Ã¨Â·Â³Ã¨Â½Â¬Ã¥Ë†Â°Ã¥Ë†â€”Ã¨Â¡Â¨Ã©Â¡ÂµÃ©ï¿½Â¢
 	public String list(){
 		setDataTotal(orderEbi.getCount(oqm));
 		List<OrderModel> orderList = orderEbi.getAll(oqm,pageNum,pageCount);
@@ -69,7 +69,7 @@ public class OrderAction extends BaseAction{
 		return LIST;
 	}
 
-	//ä¿�å­˜/ä¿®æ”¹
+	//Ã¤Â¿ï¿½Ã¥Â­Ëœ/Ã¤Â¿Â®Ã¦â€�Â¹
 	public String save(){
 		if(om.getUuid()== null){
 			orderEbi.save(om);
@@ -79,26 +79,26 @@ public class OrderAction extends BaseAction{
 		return TO_LIST;
 	}
 
-	//è·³è½¬åˆ°æ·»åŠ /ä¿®æ”¹é¡µé�¢
+	//Ã¨Â·Â³Ã¨Â½Â¬Ã¥Ë†Â°Ã¦Â·Â»Ã¥Å Â /Ã¤Â¿Â®Ã¦â€�Â¹Ã©Â¡ÂµÃ©ï¿½Â¢
 	public String input(){
 		if(om.getUuid()!=null){
 			om = orderEbi.get(om.getUuid());
 		}
 		return INPUT;
 	}
-	//è·³è½¬åˆ°é‡‡è´­è®¢å�•é¡µ
+	//Ã¨Â·Â³Ã¨Â½Â¬Ã¥Ë†Â°Ã©â€¡â€¡Ã¨Â´Â­Ã¨Â®Â¢Ã¥ï¿½â€¢Ã©Â¡Âµ
 	
 	public String buyInput(){
 		List<SupplierModel> supplierList = supplierEbi.getAll();
-		//å�˜æˆ�è¿‡æ»¤è¯¥æ•°æ�®
-		//æœ‰ç±»åˆ«ä½†æ˜¯ç±»åˆ«ä¸­æ²¡æœ‰å•†å“�çš„ç±»åˆ«è¿‡æ»¤æŽ‰
-		//æ²¡æœ‰ç±»åˆ«çš„ä¾›åº”å•†è¿‡æ»¤æŽ‰
-		//å¾ªçŽ¯æ‰€æœ‰çš„ä¾›åº”å•†ï¼Œåˆ¤å®šè¯¥ä¾›åº”å•†æ˜¯å�¦ä¿�ç•™ï¼Œå¦‚æžœä¸�ä¿�ç•™åˆ é™¤
+		//Ã¥ï¿½ËœÃ¦Ë†ï¿½Ã¨Â¿â€¡Ã¦Â»Â¤Ã¨Â¯Â¥Ã¦â€¢Â°Ã¦ï¿½Â®
+		//Ã¦Å“â€°Ã§Â±Â»Ã¥Ë†Â«Ã¤Â½â€ Ã¦ËœÂ¯Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã¦Â²Â¡Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½Ã§Å¡â€žÃ§Â±Â»Ã¥Ë†Â«Ã¨Â¿â€¡Ã¦Â»Â¤Ã¦Å½â€°
+		//Ã¦Â²Â¡Ã¦Å“â€°Ã§Â±Â»Ã¥Ë†Â«Ã§Å¡â€žÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¨Â¿â€¡Ã¦Â»Â¤Ã¦Å½â€°
+		//Ã¥Â¾ÂªÃ§Å½Â¯Ã¦â€°â‚¬Ã¦Å“â€°Ã§Å¡â€žÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¯Â¼Å’Ã¥Ë†Â¤Ã¥Â®Å¡Ã¨Â¯Â¥Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¦ËœÂ¯Ã¥ï¿½Â¦Ã¤Â¿ï¿½Ã§â€¢â„¢Ã¯Â¼Å’Ã¥Â¦â€šÃ¦Å¾Å“Ã¤Â¸ï¿½Ã¤Â¿ï¿½Ã§â€¢â„¢Ã¥Ë†Â Ã©â„¢Â¤
 		/*
 		for(int i = supplierList.size()-1;i>=0;i--){
 			SupplierModel sm = supplierList.get(i);
 			List<GoodsTypeModel> gtms = new ArrayList(sm.getGtms());
-			//å¾ªçŽ¯å•†å“�ç±»åˆ«ä¸­çš„æ•°æ�®
+			//Ã¥Â¾ÂªÃ§Å½Â¯Ã¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã§Å¡â€žÃ¦â€¢Â°Ã¦ï¿½Â®
 			for(int j = gtms.size()-1;j>=0;j--){
 				GoodsTypeModel gtm = gtms.get(j);
 				if(gtm.getGms().size() == 0){
@@ -115,9 +115,9 @@ public class OrderAction extends BaseAction{
 			flag=0;
 			SupplierModel sm = supplierList.get(i);
 			//List<GoodsTypeModel> gtms = new ArrayList(sm.getGtms());
-			//æ€§èƒ½ä¼˜äºŽä¸Šé�¢çš„æ–¹æ¡ˆ
+			//Ã¦â‚¬Â§Ã¨Æ’Â½Ã¤Â¼ËœÃ¤ÂºÅ½Ã¤Â¸Å Ã©ï¿½Â¢Ã§Å¡â€žÃ¦â€“Â¹Ã¦Â¡Ë†
 			List<GoodsTypeModel> gtms = goodsTypeEbi.getAllBySupplier(sm.getUuid());
-			//å¾ªçŽ¯å•†å“�ç±»åˆ«ä¸­çš„æ•°æ�®
+			//Ã¥Â¾ÂªÃ§Å½Â¯Ã¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã§Å¡â€žÃ¦â€¢Â°Ã¦ï¿½Â®
 			for(int j = gtms.size()-1;j>=0;j--){
 				GoodsTypeModel gtm = gtms.get(j);
 				if(gtm.getGms().size() > 0){
@@ -163,28 +163,28 @@ public class OrderAction extends BaseAction{
 	
 	/*
 	public String buyInput(){
-		//åŠ è½½ä¾›åº”å•†æ•°æ�®
-		//é—®é¢˜ï¼šä¸ªåˆ«æ²¡æœ‰å•†å“�ç±»åˆ«çš„ä¾›åº”å•†ä¸�åº”è¯¥è¢«åŠ è½½
-		//è§£å†³æ–¹æ¡ˆä¸€ï¼š
-		//è¯»å�–æ‰€æœ‰æ•°æ�®å�Žï¼Œé€šè¿‡è¿­ä»£é›†å�ˆå°†æ‰€æœ‰æ²¡æœ‰ç±»åˆ«çš„ä¾›åº”å•†åˆ é™¤æŽ‰
-		//è§£å†³æ–¹æ¡ˆäºŒï¼š
-		//æŸ¥è¯¢æ•°æ�®æ—¶ï¼Œç›´æŽ¥å°†æ²¡æœ‰å•†å“�ç±»åˆ«çš„ä¾›åº”å•†è¿‡æ»¤æŽ‰
-		//æŸ¥ä¾›åº”å•†  ä¾›åº”å•†å…³è�”ç±»åˆ«
-		//é—®é¢˜åˆ†æž�ï¼šæŸ�ä¸ªä¾›åº”å•†å…·æœ‰å¤šä¸ªå•†å“�ç±»åˆ«ï¼Œä½†æ˜¯ç±»åˆ«ä¸­æ²¡æœ‰å•†å“�ï¼Ÿ
-		//æŸ¥ä¾›åº”å•†  ä¾›åº”å•†å…³è�”ç±»åˆ«ï¼Œç±»åˆ«å…³è�”å•†å“� distinct
+		//Ã¥Å Â Ã¨Â½Â½Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¦â€¢Â°Ã¦ï¿½Â®
+		//Ã©â€”Â®Ã©Â¢ËœÃ¯Â¼Å¡Ã¤Â¸ÂªÃ¥Ë†Â«Ã¦Â²Â¡Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã§Å¡â€žÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¤Â¸ï¿½Ã¥Âºâ€�Ã¨Â¯Â¥Ã¨Â¢Â«Ã¥Å Â Ã¨Â½Â½
+		//Ã¨Â§Â£Ã¥â€ Â³Ã¦â€“Â¹Ã¦Â¡Ë†Ã¤Â¸â‚¬Ã¯Â¼Å¡
+		//Ã¨Â¯Â»Ã¥ï¿½â€“Ã¦â€°â‚¬Ã¦Å“â€°Ã¦â€¢Â°Ã¦ï¿½Â®Ã¥ï¿½Å½Ã¯Â¼Å’Ã©â‚¬Å¡Ã¨Â¿â€¡Ã¨Â¿Â­Ã¤Â»Â£Ã©â€ºâ€ Ã¥ï¿½Ë†Ã¥Â°â€ Ã¦â€°â‚¬Ã¦Å“â€°Ã¦Â²Â¡Ã¦Å“â€°Ã§Â±Â»Ã¥Ë†Â«Ã§Å¡â€žÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¥Ë†Â Ã©â„¢Â¤Ã¦Å½â€°
+		//Ã¨Â§Â£Ã¥â€ Â³Ã¦â€“Â¹Ã¦Â¡Ë†Ã¤ÂºÅ’Ã¯Â¼Å¡
+		//Ã¦Å¸Â¥Ã¨Â¯Â¢Ã¦â€¢Â°Ã¦ï¿½Â®Ã¦â€”Â¶Ã¯Â¼Å’Ã§â€ºÂ´Ã¦Å½Â¥Ã¥Â°â€ Ã¦Â²Â¡Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã§Å¡â€žÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¨Â¿â€¡Ã¦Â»Â¤Ã¦Å½â€°
+		//Ã¦Å¸Â¥Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€   Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¥â€¦Â³Ã¨ï¿½â€�Ã§Â±Â»Ã¥Ë†Â«
+		//Ã©â€”Â®Ã©Â¢ËœÃ¥Ë†â€ Ã¦Å¾ï¿½Ã¯Â¼Å¡Ã¦Å¸ï¿½Ã¤Â¸ÂªÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¥â€¦Â·Ã¦Å“â€°Ã¥Â¤Å¡Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã¯Â¼Å’Ã¤Â½â€ Ã¦ËœÂ¯Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã¦Â²Â¡Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½Ã¯Â¼Å¸
+		//Ã¦Å¸Â¥Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€   Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã¥â€¦Â³Ã¨ï¿½â€�Ã§Â±Â»Ã¥Ë†Â«Ã¯Â¼Å’Ã§Â±Â»Ã¥Ë†Â«Ã¥â€¦Â³Ã¨ï¿½â€�Ã¥â€¢â€ Ã¥â€œï¿½ distinct
 		List<SupplierModel> supplierList = supplierEbi.getAllUnionTwo();
-		//åŠ è½½ç¬¬ä¸€ä¸ªä¾›åº”å•†çš„ç±»åˆ«æ•°æ�®
+		//Ã¥Å Â Ã¨Â½Â½Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã§Å¡â€žÃ§Â±Â»Ã¥Ë†Â«Ã¦â€¢Â°Ã¦ï¿½Â®
 		/*
-		1å�·		A	B	C
+		1Ã¥ï¿½Â·		A	B	C
 				a1	b1	
 				a2	b2
 				a3
 		*/
 	/*
 		List<GoodsTypeModel> gtmList = goodsTypeEbi.getAllUnionBySupplier(supplierList.get(0).getUuid());
-		//åŠ è½½ç¬¬ä¸€ä¸ªç±»åˆ«çš„å•†å“�æ•°æ�®
+		//Ã¥Å Â Ã¨Â½Â½Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ§Â±Â»Ã¥Ë†Â«Ã§Å¡â€žÃ¥â€¢â€ Ã¥â€œï¿½Ã¦â€¢Â°Ã¦ï¿½Â®
 		List<GoodsModel> gmList = goodsEbi.getAllByGtmUuid(gtmList.get(0).getUuid());
-		//åŠ è½½ç¬¬ä¸€ä¸ªå•†å“�çš„ä»·æ ¼æ•°æ�®(çœ�ç•¥)
+		//Ã¥Å Â Ã¨Â½Â½Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã§Å¡â€žÃ¤Â»Â·Ã¦Â Â¼Ã¦â€¢Â°Ã¦ï¿½Â®(Ã§Å“ï¿½Ã§â€¢Â¥)
 		//GoodsModel gm = gmList.get(0);
 		//put("gm",gm);
 		/*
@@ -195,7 +195,7 @@ public class OrderAction extends BaseAction{
 		return "buyInput";
 	}*/
 
-	//åˆ é™¤
+	//Ã¥Ë†Â Ã©â„¢Â¤
 	public String delete(){
 		orderEbi.delete(om);
 		return TO_LIST;
@@ -222,36 +222,36 @@ public class OrderAction extends BaseAction{
 	}
 
 	public String ajaxGetGtmAndGm(){
-		//æ ¹æ�®ä¾›åº”å•†çš„uuidèŽ·å�–ç±»åˆ«æ•°æ�®ä¸Žå•†å“�æ•°æ�®
-		//ç±»åˆ«ä¸­å¿…é¡»æœ‰å•†å“�
+		//Ã¦Â Â¹Ã¦ï¿½Â®Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã§Å¡â€žuuidÃ¨Å½Â·Ã¥ï¿½â€“Ã§Â±Â»Ã¥Ë†Â«Ã¦â€¢Â°Ã¦ï¿½Â®Ã¤Â¸Å½Ã¥â€¢â€ Ã¥â€œï¿½Ã¦â€¢Â°Ã¦ï¿½Â®
+		//Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã¥Â¿â€¦Ã©Â¡Â»Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½
 		gtmList = goodsTypeEbi.getAllUnionBySupplier(supplierUuid);
-		//æ ¹æ�®ç¬¬ä¸€ä¸ªå•†å“�ç±»åˆ«èŽ·å�–å¯¹åº”çš„æ‰€æœ‰å•†å“�
+		//Ã¦Â Â¹Ã¦ï¿½Â®Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã¨Å½Â·Ã¥ï¿½â€“Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žÃ¦â€°â‚¬Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½
 		gmList = goodsEbi.getAllByGtmUuid(gtmList.get(0).getUuid());
-		//èŽ·å�–ç¬¬ä¸€ä¸ªå•†å“�ä¿¡æ�¯
+		//Ã¨Å½Â·Ã¥ï¿½â€“Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã¤Â¿Â¡Ã¦ï¿½Â¯
 		gm = gmList.get(0);
 		return "ajaxGetGtmAndGm";
 	}
 	
-	//éœ€è¦�è¿‡æ»¤å·²ç»�ä½¿ç”¨çš„æ•°æ�®
+	//Ã©Å“â‚¬Ã¨Â¦ï¿½Ã¨Â¿â€¡Ã¦Â»Â¤Ã¥Â·Â²Ã§Â»ï¿½Ã¤Â½Â¿Ã§â€�Â¨Ã§Å¡â€žÃ¦â€¢Â°Ã¦ï¿½Â®
 	public String ajaxGetGtmAndGm2(){
-		//è§£æž�å‡ºå·²ç»�ä½¿ç”¨çš„å•†å“�å¯¹åº”çš„uuid
+		//Ã¨Â§Â£Ã¦Å¾ï¿½Ã¥â€¡ÂºÃ¥Â·Â²Ã§Â»ï¿½Ã¤Â½Â¿Ã§â€�Â¨Ã§Å¡â€žÃ¥â€¢â€ Ã¥â€œï¿½Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žuuid
 		String[] uuidsArr = used.split(",");
-		//å°†ä½¿ç”¨è¿‡çš„å•†å“� uuidè½¬æ�¢ä¸ºä¸€ä¸ªæ•°ç»„/é›†å�ˆ
+		//Ã¥Â°â€ Ã¤Â½Â¿Ã§â€�Â¨Ã¨Â¿â€¡Ã§Å¡â€žÃ¥â€¢â€ Ã¥â€œï¿½ uuidÃ¨Â½Â¬Ã¦ï¿½Â¢Ã¤Â¸ÂºÃ¤Â¸â‚¬Ã¤Â¸ÂªÃ¦â€¢Â°Ã§Â»â€ž/Ã©â€ºâ€ Ã¥ï¿½Ë†
 		Set<Long> uuids = new HashSet<Long>();
 		for(String uuidStr:uuidsArr){
 			uuids.add(new Long(uuidStr));
 		}
 		
-		//æ ¹æ�®ä¾›åº”å•†çš„uuidèŽ·å�–ç±»åˆ«æ•°æ�®ä¸Žå•†å“�æ•°æ�®
-		//ç±»åˆ«ä¸­å¿…é¡»æœ‰å•†å“�
+		//Ã¦Â Â¹Ã¦ï¿½Â®Ã¤Â¾â€ºÃ¥Âºâ€�Ã¥â€¢â€ Ã§Å¡â€žuuidÃ¨Å½Â·Ã¥ï¿½â€“Ã§Â±Â»Ã¥Ë†Â«Ã¦â€¢Â°Ã¦ï¿½Â®Ã¤Â¸Å½Ã¥â€¢â€ Ã¥â€œï¿½Ã¦â€¢Â°Ã¦ï¿½Â®
+		//Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã¥Â¿â€¦Ã©Â¡Â»Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½
 		gtmList = goodsTypeEbi.getAllUnionBySupplier(supplierUuid);
-		//1.å¦‚æžœç±»åˆ«ä¸­çš„æ‰€æœ‰å•†å“�éƒ½ä½¿ç”¨è¿‡ï¼Œè¯¥ç±»åˆ«åˆ é™¤
-		//1.xå¦‚æžœç±»åˆ«ä¸­æŸ�ä¸ªå•†å“�æ²¡æœ‰ä½¿ç”¨è¿‡ï¼Œè¯¥ç±»åˆ«ä¿�ç•™
+		//1.Ã¥Â¦â€šÃ¦Å¾Å“Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã§Å¡â€žÃ¦â€°â‚¬Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½Ã©Æ’Â½Ã¤Â½Â¿Ã§â€�Â¨Ã¨Â¿â€¡Ã¯Â¼Å’Ã¨Â¯Â¥Ã§Â±Â»Ã¥Ë†Â«Ã¥Ë†Â Ã©â„¢Â¤
+		//1.xÃ¥Â¦â€šÃ¦Å¾Å“Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¸Â­Ã¦Å¸ï¿½Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã¦Â²Â¡Ã¦Å“â€°Ã¤Â½Â¿Ã§â€�Â¨Ã¨Â¿â€¡Ã¯Â¼Å’Ã¨Â¯Â¥Ã§Â±Â»Ã¥Ë†Â«Ã¤Â¿ï¿½Ã§â€¢â„¢
 		int flag=0;
 		for(int i = gtmList.size()-1;i>=0;i--){
 			flag = 0;
 			GoodsTypeModel gtm = gtmList.get(i);
-			//根据商品类别获取商品
+			//æ ¹æ�®å•†å“�ç±»åˆ«èŽ·å�–å•†å“�
 			gmList = goodsEbi.getAllByGtmUuid(gtm.getUuid());
 			for(GoodsModel temp:gmList){
 				if(!uuids.contains(temp.getUuid())){
@@ -259,25 +259,25 @@ public class OrderAction extends BaseAction{
 					continue;
 				}
 			}
-			//该类别中所有商品全部使用过
+			//è¯¥ç±»åˆ«ä¸­æ‰€æœ‰å•†å“�å…¨éƒ¨ä½¿ç”¨è¿‡
 			if(flag ==1){
 				continue;
 			} else gtmList.remove(i);
 		}
 
 		
-		//æ ¹æ�®ç¬¬ä¸€ä¸ªå•†å“�ç±»åˆ«èŽ·å�–å¯¹åº”çš„æ‰€æœ‰å•†å“�
+		//Ã¦Â Â¹Ã¦ï¿½Â®Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã§Â±Â»Ã¥Ë†Â«Ã¨Å½Â·Ã¥ï¿½â€“Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žÃ¦â€°â‚¬Ã¦Å“â€°Ã¥â€¢â€ Ã¥â€œï¿½
 		gmList = goodsEbi.getAllByGtmUuid(gtmList.get(0).getUuid());
-		//åˆ é™¤æŽ‰å·²ç»�ä½¿ç”¨è¿‡çš„å•†å“�
+		//Ã¥Ë†Â Ã©â„¢Â¤Ã¦Å½â€°Ã¥Â·Â²Ã§Â»ï¿½Ã¤Â½Â¿Ã§â€�Â¨Ã¨Â¿â€¡Ã§Å¡â€žÃ¥â€¢â€ Ã¥â€œï¿½
 		for(int i = gmList.size()-1;i>=0;i--){
 			GoodsModel gm = gmList.get(i);
 			if(uuids.contains(gm.getUuid())){
-				//è¯¥å•†å“�å·²ç»�ä½¿ç”¨è¿‡
+				//Ã¨Â¯Â¥Ã¥â€¢â€ Ã¥â€œï¿½Ã¥Â·Â²Ã§Â»ï¿½Ã¤Â½Â¿Ã§â€�Â¨Ã¨Â¿â€¡
 				gmList.remove(i);
 			}
 		}
 		
-		//èŽ·å�–ç¬¬ä¸€ä¸ªå•†å“�ä¿¡æ�¯
+		//Ã¨Å½Â·Ã¥ï¿½â€“Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¤Â¸ÂªÃ¥â€¢â€ Ã¥â€œï¿½Ã¤Â¿Â¡Ã¦ï¿½Â¯
 		gm = gmList.get(0);
 		return "ajaxGetGtmAndGm";
 	}
@@ -297,9 +297,9 @@ public class OrderAction extends BaseAction{
 	public Integer[] nums;
 	public Double[] prices;
 	
-	//ç”Ÿæˆ�é‡‡è´­è®¢å�•
+	//Ã§â€�Å¸Ã¦Ë†ï¿½Ã©â€¡â€¡Ã¨Â´Â­Ã¨Â®Â¢Ã¥ï¿½â€¢
 	public String buyOrder(){
-		//æ”¶é›†é¡µé�¢çš„å€¼
+		//Ã¦â€�Â¶Ã©â€ºâ€ Ã©Â¡ÂµÃ©ï¿½Â¢Ã§Å¡â€žÃ¥â‚¬Â¼
 		//om.sm.uuid->om
 		/*
 		System.out.println(om.getSm().getUuid());
@@ -325,58 +325,79 @@ public class OrderAction extends BaseAction{
 		return "buyDetailList";
 	}
 	
-	//--å®¡æ ¸ç›¸å…³----------------------
-	public String buyCheck(){
+	//--Ã¥Â®Â¡Ã¦Â Â¸Ã§â€ºÂ¸Ã¥â€¦Â³----------------------
+	
+	/**
+	 * 
+	 * @param check insert 0 to get buyCheck, 1 to get toBuyCheckDetail, 2 to get buyCheckPass, 3 to get buyCheckNoPass
+	 * @return a string with the desidered value
+	 */
+	public String Check(int check){
+		String toReturn = null;
+		if (check==0) {
 		setDataTotal(orderEbi.getCountByTypes(oqm));
 		List<OrderModel> orderList = orderEbi.getAllNoCheckOrder(oqm,pageNum,pageCount);
 		put("orderList",orderList);
-		return "buyCheck";
+		toReturn= "buyCheck";
+		}
+		//Ã¨Â½Â¬Ã¥Ë†Â°Ã¥Â®Â¡Ã¦Â Â¸Ã¨Â¯Â¦Ã¦Æ’â€¦Ã©Â¡Âµ
+		else if (check==1) {
+			//Ã¦Â Â¹Ã¦ï¿½Â®Ã¨Â®Â¢Ã¥ï¿½â€¢Ã§Å¡â€žuuidÃ¨Å½Â·Ã¥ï¿½â€“Ã¨Â®Â¢Ã¥ï¿½â€¢Ã¦â€¢Â°Ã¦ï¿½Â®
+			om = orderEbi.get(om.getUuid());
+			toReturn = "toBuyCheckDetail";
+		}
+		//Ã©â€¡â€¡Ã¨Â´Â­Ã¥Â®Â¡Ã¦Â Â¸Ã©â‚¬Å¡Ã¨Â¿â€¡
+		else if (check==2) {
+			orderEbi.buyCheckPass(om.getUuid(),getLogin());
+			toReturn = "toBuyCheck";
+		}
+		//Ã©â€¡â€¡Ã¨Â´Â­Ã¥Â®Â¡Ã¦Â Â¸Ã©Â©Â³Ã¥â€ºÅ¾
+		else if (check==3) {
+			orderEbi.buyCheckNoPass(om.getUuid(),getLogin());
+			toReturn = "toBuyCheck";
+		}
+		else {
+			toReturn = "The Value is not correct, please read documentation!";
+		}
+		return toReturn;
 	}
-	//è½¬åˆ°å®¡æ ¸è¯¦æƒ…é¡µ
-	public String toBuyCheckDetail(){
-		//æ ¹æ�®è®¢å�•çš„uuidèŽ·å�–è®¢å�•æ•°æ�®
-		om = orderEbi.get(om.getUuid());
-		return "toBuyCheckDetail";
-	}
-	//é‡‡è´­å®¡æ ¸é€šè¿‡
-	public String buyCheckPass(){
-		orderEbi.buyCheckPass(om.getUuid(),getLogin());
-		return "toBuyCheck";
-	}
-	//é‡‡è´­å®¡æ ¸é©³å›ž
-	public String buyCheckNoPass(){
-		orderEbi.buyCheckNoPass(om.getUuid(),getLogin());
-		return "toBuyCheck";
-	}
-	
-	
-	//--ä»»åŠ¡åˆ†é…�----------------------
-	public String assignTaskList(){
-		//èŽ·å�–å¾…åˆ†é…�çš„ä»»åŠ¡æ•°æ�®é›†å�ˆ
-		List<OrderModel> orderList = orderEbi.getAllTasks(oqm,pageNum,pageCount);
-		put("orderList",orderList);
-		//è·³è½¬é¡µé�¢
-		return "assignTaskList";
-	}
-	
-	public String assignTaskDetail(){
-		//åŠ è½½è¿�è¾“éƒ¨é—¨çš„æ‰€æœ‰å‘˜å·¥
-		Long depUuid = getLogin().getDm().getUuid();
-		List<EmpModel> empList = empEbi.getAllByDep(depUuid);
-		put("empList",empList);
-		om = orderEbi.get(om.getUuid());
-		return "assignTaskDetail";
-	}
-	
-	//æŒ‡æ´¾å…·ä½“ä»»åŠ¡äºº
-	public String assignTask(){
-		//æŒ‡æ´¾ä»»åŠ¡äºº  om.uuid   om.completer.uuid
+
+	/**
+	 * 
+	 * @param check insert 0 to get assignTask, 1 to get assignTaskList, 2 to get assignTaskDetail
+	 * @return a string with the desidered value
+	 */
+	//Ã¦Å’â€¡Ã¦Â´Â¾Ã¥â€¦Â·Ã¤Â½â€œÃ¤Â»Â»Ã¥Å Â¡Ã¤ÂºÂº
+	public String assignTask(int check){
+		String toReturn = null;
+		if (check==0) {
+		//Ã¦Å’â€¡Ã¦Â´Â¾Ã¤Â»Â»Ã¥Å Â¡Ã¤ÂºÂº  om.uuid   om.completer.uuid
 		orderEbi.assignTask(om);
-		return "toAssignTaskList";
+		toReturn = "toAssignTaskList";
+		} else
+		if (check ==1) {
+			//Ã¨Å½Â·Ã¥ï¿½â€“Ã¥Â¾â€¦Ã¥Ë†â€ Ã©â€¦ï¿½Ã§Å¡â€žÃ¤Â»Â»Ã¥Å Â¡Ã¦â€¢Â°Ã¦ï¿½Â®Ã©â€ºâ€ Ã¥ï¿½Ë†
+			List<OrderModel> orderList = orderEbi.getAllTasks(oqm,pageNum,pageCount);
+			put("orderList",orderList);
+			//Ã¨Â·Â³Ã¨Â½Â¬Ã©Â¡ÂµÃ©ï¿½Â¢
+			return "assignTaskList";
+		}
+		else if (check ==2) {
+			//Ã¥Å Â Ã¨Â½Â½Ã¨Â¿ï¿½Ã¨Â¾â€œÃ©Æ’Â¨Ã©â€”Â¨Ã§Å¡â€žÃ¦â€°â‚¬Ã¦Å“â€°Ã¥â€˜ËœÃ¥Â·Â¥
+			Long depUuid = getLogin().getDm().getUuid();
+			List<EmpModel> empList = empEbi.getAllByDep(depUuid);
+			put("empList",empList);
+			om = orderEbi.get(om.getUuid());
+			return "assignTaskDetail";
+		}
+		else {
+			toReturn = "The Value is not correct, please read documentation!";
+		}
+		return toReturn;
 	}
 	
 	public String queryTask(){
-		//æ ¹æ�®ç™»é™†äººä¿¡æ�¯èŽ·å�–å¯¹åº”çš„ä»»åŠ¡åˆ—è¡¨
+		//Ã¦Â Â¹Ã¦ï¿½Â®Ã§â„¢Â»Ã©â„¢â€ Ã¤ÂºÂºÃ¤Â¿Â¡Ã¦ï¿½Â¯Ã¨Å½Â·Ã¥ï¿½â€“Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žÃ¤Â»Â»Ã¥Å Â¡Ã¥Ë†â€”Ã¨Â¡Â¨
 		List<OrderModel> orderList = orderEbi.getAllByCompleter(oqm,pageNum,pageCount,getLogin());
 		put("orderList",orderList);
 		return "queryTask";
@@ -392,24 +413,24 @@ public class OrderAction extends BaseAction{
 		return "toQueryTask";
 	}
 	
-	//--ä»»åŠ¡åˆ†é…�ç»“æ�Ÿ----------------------
+	//--Ã¤Â»Â»Ã¥Å Â¡Ã¥Ë†â€ Ã©â€¦ï¿½Ã§Â»â€œÃ¦ï¿½Å¸----------------------
 	
-	//ä»“åº“å…¥åº“
+	//Ã¤Â»â€œÃ¥Âºâ€œÃ¥â€¦Â¥Ã¥Âºâ€œ
 	public String inGoodsList(){
-		//å±•ç¤ºæ‰€æœ‰æ²¡æœ‰å…¥åº“å®Œæ¯•çš„è®¢å�•æ•°æ�®
+		//Ã¥Â±â€¢Ã§Â¤ÂºÃ¦â€°â‚¬Ã¦Å“â€°Ã¦Â²Â¡Ã¦Å“â€°Ã¥â€¦Â¥Ã¥Âºâ€œÃ¥Â®Å’Ã¦Â¯â€¢Ã§Å¡â€žÃ¨Â®Â¢Ã¥ï¿½â€¢Ã¦â€¢Â°Ã¦ï¿½Â®
 		List<OrderModel> orderList = orderEbi.getAllNotIn(oqm,pageNum,pageCount);
 		put("orderList",orderList);
 		return "inGoodsList";
 	}
 	public String inGoodsDetail(){
-		//åŠ è½½æ‰€æœ‰ä»“åº“æ•°æ�®
+		//Ã¥Å Â Ã¨Â½Â½Ã¦â€°â‚¬Ã¦Å“â€°Ã¤Â»â€œÃ¥Âºâ€œÃ¦â€¢Â°Ã¦ï¿½Â®
 		List<StoreModel> storeList = storeEbi.getAll();
 		put("storeList",storeList);
 		om = orderEbi.get(om.getUuid());
 		return "inGoodsDetail";
 	}
 	
-	//--å…¥åº“--------------------------------
+	//--Ã¥â€¦Â¥Ã¥Âºâ€œ--------------------------------
 	public Long odmUuid;
 	private OrderDetailModel odm;
 	
@@ -418,7 +439,7 @@ public class OrderAction extends BaseAction{
 	}
 
 	public String ajaxGetSurplusByOdmUuid(){
-		//æ ¹æ�®odmUuidèŽ·å�–å¯¹åº”çš„è´§ç‰©å‰©ä½™æ•°é‡�
+		//Ã¦Â Â¹Ã¦ï¿½Â®odmUuidÃ¨Å½Â·Ã¥ï¿½â€“Ã¥Â¯Â¹Ã¥Âºâ€�Ã§Å¡â€žÃ¨Â´Â§Ã§â€°Â©Ã¥â€°Â©Ã¤Â½â„¢Ã¦â€¢Â°Ã©â€¡ï¿½
 		odm = orderDetailEbi.get(odmUuid);
 		return "ajaxGetSurplusByOdmUuid";
 	}
