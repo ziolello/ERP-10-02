@@ -17,12 +17,12 @@ public class OrderModel {
 	public static final Integer ORDER_TYPE_OF_BUY_IN_STORE = 141;
 	public static final Integer ORDER_TYPE_OF_BUY_END = 199;
 	
-	public static final String ORDER_TYPE_OF_BUY_NO_CHECK_VIEW = "æœªå®¡æ ¸";
-	public static final String ORDER_TYPE_OF_BUY_CHECK_NO_VIEW = "é©³å›ž";
-	public static final String ORDER_TYPE_OF_BUY_CHECK_OK_VIEW = "ä»»åŠ¡æŒ‡æ´¾ä¸­";
-	public static final String ORDER_TYPE_OF_BUY_BUYING_VIEW = "é‡‡è´­ä¸­";
-	public static final String ORDER_TYPE_OF_BUY_IN_STORE_VIEW = "å…¥åº“ä¸­";
-	public static final String ORDER_TYPE_OF_BUY_END_VIEW = "å·²ç»“å�•";
+	public static final String ORDER_TYPE_OF_BUY_NO_CHECK_VIEW = "Ã¦Å“ÂªÃ¥Â®Â¡Ã¦Â Â¸";
+	public static final String ORDER_TYPE_OF_BUY_CHECK_NO_VIEW = "Ã©Â©Â³Ã¥â€ºÅ¾";
+	public static final String ORDER_TYPE_OF_BUY_CHECK_OK_VIEW = "Ã¤Â»Â»Ã¥Å Â¡Ã¦Å’â€¡Ã¦Â´Â¾Ã¤Â¸Â­";
+	public static final String ORDER_TYPE_OF_BUY_BUYING_VIEW = "Ã©â€¡â€¡Ã¨Â´Â­Ã¤Â¸Â­";
+	public static final String ORDER_TYPE_OF_BUY_IN_STORE_VIEW = "Ã¥â€¦Â¥Ã¥Âºâ€œÃ¤Â¸Â­";
+	public static final String ORDER_TYPE_OF_BUY_END_VIEW = "Ã¥Â·Â²Ã§Â»â€œÃ¥ï¿½â€¢";
 	
 	public static final Map<Integer, String> orderTypeMap = new HashMap<Integer, String>();
 	public static final Map<Integer, String> buyTypeMap = new TreeMap<Integer, String>();
@@ -34,10 +34,10 @@ public class OrderModel {
 	public static final Integer ORDER_ORDERTYPE_OF_RETURN_BUY = 3;
 	public static final Integer ORDER_ORDERTYPE_OF_RETURN_SALE = 4;
 	
-	public static final String ORDER_ORDERTYPE_OF_BUY_VIEW = "é‡‡è´­";
-	public static final String ORDER_ORDERTYPE_OF_SALE_VIEW = "é”€å”®";
-	public static final String ORDER_ORDERTYPE_OF_RETURN_BUY_VIEW = "é‡‡è´­é€€è´§";
-	public static final String ORDER_ORDERTYPE_OF_RETURN_SALE_VIEW = "é”€å”®é€€è´§";
+	public static final String ORDER_ORDERTYPE_OF_BUY_VIEW = "Ã©â€¡â€¡Ã¨Â´Â­";
+	public static final String ORDER_ORDERTYPE_OF_SALE_VIEW = "Ã©â€�â‚¬Ã¥â€�Â®";
+	public static final String ORDER_ORDERTYPE_OF_RETURN_BUY_VIEW = "Ã©â€¡â€¡Ã¨Â´Â­Ã©â‚¬â‚¬Ã¨Â´Â§";
+	public static final String ORDER_ORDERTYPE_OF_RETURN_SALE_VIEW = "Ã©â€�â‚¬Ã¥â€�Â®Ã©â‚¬â‚¬Ã¨Â´Â§";
 	
 	static{
 		orderTypeMap.put(ORDER_ORDERTYPE_OF_BUY,ORDER_ORDERTYPE_OF_BUY_VIEW);
@@ -55,22 +55,22 @@ public class OrderModel {
 		typeMap.putAll(buyTypeMap);
 	}
 	
-	//typeçŠ¶æ€�ç±»åž‹
+	//typeÃ§Å Â¶Ã¦â‚¬ï¿½Ã§Â±Â»Ã¥Å¾â€¹
 	/*
-	ç”³è¯·æœªå®¡æ‰¹					æœªå®¡æ ¸			111
-	ç”³è¯·å·²å®¡æ‰¹é©³å›ž				é©³å›ž				120
-	ç”³è¯·å·²å®¡æ‰¹é€šè¿‡/æœªæŒ‡æ´¾ä»»åŠ¡äºº	ä»»åŠ¡æŒ‡æ´¾ä¸­			121
-	å·²æŒ‡æ´¾ä»»åŠ¡äºº/ä»»åŠ¡æœªå®Œæˆ�		é‡‡è´­ä¸­			131
-	ä»»åŠ¡å·²ç»�å®Œæˆ�/è®¢å�•æœªå…¥åº“		å…¥åº“ä¸­			141
-	è®¢å�•å…¥åº“å®Œæ¯•				å·²ç»“å�•			199
+	Ã§â€�Â³Ã¨Â¯Â·Ã¦Å“ÂªÃ¥Â®Â¡Ã¦â€°Â¹					Ã¦Å“ÂªÃ¥Â®Â¡Ã¦Â Â¸			111
+	Ã§â€�Â³Ã¨Â¯Â·Ã¥Â·Â²Ã¥Â®Â¡Ã¦â€°Â¹Ã©Â©Â³Ã¥â€ºÅ¾				Ã©Â©Â³Ã¥â€ºÅ¾				120
+	Ã§â€�Â³Ã¨Â¯Â·Ã¥Â·Â²Ã¥Â®Â¡Ã¦â€°Â¹Ã©â‚¬Å¡Ã¨Â¿â€¡/Ã¦Å“ÂªÃ¦Å’â€¡Ã¦Â´Â¾Ã¤Â»Â»Ã¥Å Â¡Ã¤ÂºÂº	Ã¤Â»Â»Ã¥Å Â¡Ã¦Å’â€¡Ã¦Â´Â¾Ã¤Â¸Â­			121
+	Ã¥Â·Â²Ã¦Å’â€¡Ã¦Â´Â¾Ã¤Â»Â»Ã¥Å Â¡Ã¤ÂºÂº/Ã¤Â»Â»Ã¥Å Â¡Ã¦Å“ÂªÃ¥Â®Å’Ã¦Ë†ï¿½		Ã©â€¡â€¡Ã¨Â´Â­Ã¤Â¸Â­			131
+	Ã¤Â»Â»Ã¥Å Â¡Ã¥Â·Â²Ã§Â»ï¿½Ã¥Â®Å’Ã¦Ë†ï¿½/Ã¨Â®Â¢Ã¥ï¿½â€¢Ã¦Å“ÂªÃ¥â€¦Â¥Ã¥Âºâ€œ		Ã¥â€¦Â¥Ã¥Âºâ€œÃ¤Â¸Â­			141
+	Ã¨Â®Â¢Ã¥ï¿½â€¢Ã¥â€¦Â¥Ã¥Âºâ€œÃ¥Â®Å’Ã¦Â¯â€¢				Ã¥Â·Â²Ã§Â»â€œÃ¥ï¿½â€¢			199
 	*/
 	/*
-	211	æœªå®¡æ ¸									
-	220	é©³å›ž
-	221	ä»»åŠ¡æŒ‡æ´¾ä¸­
-	231	å‡ºåº“ä¸­
-	241	é€�è´§ä¸­
-	299	å·²ç»“å�•
+	211	Ã¦Å“ÂªÃ¥Â®Â¡Ã¦Â Â¸									
+	220	Ã©Â©Â³Ã¥â€ºÅ¾
+	221	Ã¤Â»Â»Ã¥Å Â¡Ã¦Å’â€¡Ã¦Â´Â¾Ã¤Â¸Â­
+	231	Ã¥â€¡ÂºÃ¥Âºâ€œÃ¤Â¸Â­
+	241	Ã©â‚¬ï¿½Ã¨Â´Â§Ã¤Â¸Â­
+	299	Ã¥Â·Â²Ã§Â»â€œÃ¥ï¿½â€¢
 	*/
 	
 	private Long uuid;
@@ -87,7 +87,7 @@ public class OrderModel {
 	private Long checkTime;
 	private Long completeTime;
 	
-	//è§†å›¾å€¼
+	//Ã¨Â§â€ Ã¥â€ºÂ¾Ã¥â‚¬Â¼
 	private String totalPriceView;
 	private String createTimeView;
 	private String checkTimeView;
@@ -95,7 +95,7 @@ public class OrderModel {
 	private String orderTypeView;
 	private String typeView;
 	
-	//å…³ç³»
+	//Ã¥â€¦Â³Ã§Â³Â»
 	private EmpModel creater;
 	private EmpModel checker;
 	private EmpModel completer;
@@ -108,24 +108,58 @@ public class OrderModel {
 	public void setOdms(Set<OrderDetailModel> odms) {
 		this.odms = odms;
 	}
-	public String getTotalPriceView() {
-		return totalPriceView;
+	
+	
+	/**
+	 * 
+	 * @param check insert 0 to get totalPriceView, 1 to get orderTypeView, 2 to get typeView
+	 * @return a string with the desidered value
+	 */
+	public String getCartView(int check) {
+		String toReturn= null;
+		if (check==0) {
+			toReturn = totalPriceView;
+
+		} else
+		if (check==1) {
+			toReturn = orderTypeView;
+
+		} else
+		if (check==2) {
+			toReturn = typeView;
+		}
+		else {
+			toReturn = "The Value is not correct, please read documentation!";
+		}
+		
+		return toReturn;
 	}
-	public String getOrderTypeView() {
-		return orderTypeView;
+	
+	/**
+	 * 
+	 * @param check insert 0 to get createTimeView, 1 to get checkTimeView, 2 to get completeTimeView
+	 * @return a string with the desidered value
+	 */
+	public String getTimeView(int check) {
+		String toReturn= null;
+		if (check==0) {
+			toReturn = createTimeView;
+
+		} else
+		if (check==1) {
+			toReturn = checkTimeView;
+
+		} else
+		if (check==2) {
+			toReturn = completeTimeView;
+		}
+		else {
+			toReturn = "The Value is not correct, please read documentation!";
+		}
+		
+		return toReturn;
 	}
-	public String getTypeView() {
-		return typeView;
-	}
-	public String getCreateTimeView() {
-		return createTimeView;
-	}
-	public String getCheckTimeView() {
-		return checkTimeView;
-	}
-	public String getCompleteTimeView() {
-		return completeTimeView;
-	}
+	
 	public Long getUuid() {
 		return uuid;
 	}

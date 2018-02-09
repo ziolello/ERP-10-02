@@ -12,8 +12,8 @@ public class EmpModel {
 	public static final Integer EMP_GENDER_OF_MAN = 1;
 	public static final Integer EMP_GENDER_OF_WOMAN = 0;
 	
-	public static final String EMP_GENDER_OF_MAN_VIEW = "男";
-	public static final String EMP_GENDER_OF_WOMAN_VIEW = "女";
+	public static final String EMP_GENDER_OF_MAN_VIEW = "ç”·";
+	public static final String EMP_GENDER_OF_WOMAN_VIEW = "å¥³";
 	
 	public static Map<Integer, String> genderMap = new HashMap<Integer, String>();
 	
@@ -23,11 +23,11 @@ public class EmpModel {
 	}
 	
 	private Long uuid;
-	//登陆用户名
+	//ç™»é™†ç”¨æˆ·å��
 	private String userName;
-	//密码
+	//å¯†ç �
 	private String pwd;
-	//真实姓名
+	//çœŸå®žå§“å��
 	private String name;
 	
 	private String email;
@@ -41,16 +41,16 @@ public class EmpModel {
 	private Integer gender;
 	private Integer loginTimes;
 	
-	//视图值
+	//è§†å›¾å€¼
 	private String birthdayView;
 	private String lastLoginTimeView;
 	private String genderView;
 	
-	//关系
+	//å…³ç³»
 	private DepModel dm;
 	private Set<RoleModel> roles;
 	
-	//权限校验辅助字段
+	//æ�ƒé™�æ ¡éªŒè¾…åŠ©å­—æ®µ
 	private String resValue;
 	
 	public String getResValue() {
@@ -73,17 +73,26 @@ public class EmpModel {
 		return uuid;
 	}
 
-	public String getBirthdayView() {
-		return birthdayView;
+	/**
+	 * 
+	 * @param check insert 0 to get birthdayView, 1 to get genderView, 2 to get lastLoginTimeView
+	 * @return a string with the desidered value
+	 */
+	public String getView(int check) {
+		String toReturn = null;
+		if (check == 0) {
+			toReturn= birthdayView;
+		}
+		if (check == 1) {
+			toReturn= genderView;
+		}
+		if (check == 2) {
+			toReturn =lastLoginTimeView;
+		}
+			
+		return toReturn;
 	}
 	
-	public String getGenderView() {
-		return genderView;
-	}
-
-	public String getLastLoginTimeView() {
-		return lastLoginTimeView;
-	}
 
 	public void setUuid(Long uuid) {
 		this.uuid = uuid;
@@ -105,32 +114,42 @@ public class EmpModel {
 		this.pwd = pwd;
 	}
 
-	public String getName() {
-		return name;
+	/**
+	 * 
+	 * @param check insert 0 to get name, 1 to get email, 2 to get tele, 3 to get address
+	 * @return a string with the desidered value
+	 */
+	public String getPersonalInformation(int check) {
+		String toReturn = null;
+		if (check == 0) {
+			toReturn= name;
+		} else
+		if (check == 1) {
+			toReturn= email;
+		} else
+		if (check == 2) {
+			toReturn =tele;
+		}else
+		if (check == 3) {
+			toReturn =address;
+		} else {
+			toReturn = "The Value is not correct, please read documentation!";
+		}
+			
+		return toReturn;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public String getTele() {
-		return tele;
-	}
-
 	public void setTele(String tele) {
 		this.tele = tele;
-	}
-
-	public String getAddress() {
-		return address;
 	}
 
 	public void setAddress(String address) {
