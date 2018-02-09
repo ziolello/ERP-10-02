@@ -4,26 +4,15 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 public class App {
-	public static void main(String[] args) {
-		//根据Cat获得其父类Animal的泛型String
-		Class clazz = Cat.class;
-		//clazz->String
-		//clazz.getSuperclass();
-		Type type = clazz.getGenericSuperclass();
-		ParameterizedType pType =(ParameterizedType)type;
-		Type[] types = pType.getActualTypeArguments(); 
-		for(Type t:types){
-			System.out.println((Class)t);
-		}
-	}
+	
 }
 
 /*
 Cat<???>
-//要一个类的泛型
+//è¦�ä¸€ä¸ªç±»çš„æ³›åž‹
 getGenericSuperclass() 
-返回表示此 Class 所表示的实体（类、接口、基本类型或 void）的直接超类的 Type。
+è¿”å›žè¡¨ç¤ºæ­¤ Class æ‰€è¡¨ç¤ºçš„å®žä½“ï¼ˆç±»ã€�æŽ¥å�£ã€�åŸºæœ¬ç±»åž‹æˆ– voidï¼‰çš„ç›´æŽ¥è¶…ç±»çš„ Typeã€‚
 
 getSuperclass() 
-返回表示此 Class 所表示的实体（类、接口、基本类型或 void）的超类的 Class。
+è¿”å›žè¡¨ç¤ºæ­¤ Class æ‰€è¡¨ç¤ºçš„å®žä½“ï¼ˆç±»ã€�æŽ¥å�£ã€�åŸºæœ¬ç±»åž‹æˆ– voidï¼‰çš„è¶…ç±»çš„ Classã€‚
 */
