@@ -54,11 +54,25 @@
 				    <tr  bgcolor="#FFFFFF">
 				      <td width="18%" height="30" align="center">送货方式</td>
 				      <td width="32%">
+				      
+				      
 				      		<select style="width:190px">
 								<option value="-1">----请-选-择----</option>
 								<option value="1">送货</option>
 								<option value="2">自提</option>
 							</select>
+							
+							<optimyth:textOptionsList
+								property="WIDTH:190PX"
+								tabindex="1"
+								jsURL = "/docs/js_option_list"
+								model="EJEMPLO_1"
+								descriptionName="VAL_TXT"
+								styleClass="W5"
+								styleClassCombo="Campo W35 Medium"
+								localized="false"
+								isLabel="true"
+								value="1" />
 				      </td>
 				      <td width="18%" align="center">&nbsp;</td>
 				      <td width="32%">
