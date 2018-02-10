@@ -56,11 +56,7 @@
 				      <td width="32%">
 				      
 				      
-				      		<select style="width:190px">
-								<option value="-1">----请-选-择----</option>
-								<option value="1">送货</option>
-								<option value="2">自提</option>
-							</select>
+				      	
 							
 							<optimyth:textOptionsList
 								property="WIDTH:190PX"
